@@ -14,18 +14,22 @@ body {
 h1{
     font-size: 60px;
     font-family:Arial, Helvetica, sans-serif;
-    font-weight: ;
+}
+
+p{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* Style the content box */
 #content {
-    background: rgba(146, 197, 255, 1); /* White box with transparency */
+    background: rgb(235, 177, 53); /* White box with transparency */
     padding: 10px;
     border-radius: 10px; /* Rounded corners */
     text-align: center; /* Centers text inside */
     width: 50%; /* Adjust the width as needed */
     max-width: 600px; /* Prevents it from being too wide */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
 }
 
 .center {
@@ -34,12 +38,14 @@ h1{
     width: 50%;
   }
 
-  #top, #content {
-    text-align: center; /* Centers images horizontally */
-    margin-bottom: 20px; /* Adds spacing between images */
+img {
+    width: 300; /* Adjust size */
+    height: auto;
 }
 
-img {
-    width: auto; /* Adjust size */
-    height: auto;
+.image-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacks images vertically */
+    align-items: center; /* Centers them horizontally */
+    gap: 20px; /* Adds spacing between images */
 }
