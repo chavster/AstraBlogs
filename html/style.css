@@ -14,7 +14,6 @@ body {
     background-size: cover;
     background-position: center;
     min-height: 100vh;
-    min-height: -webkit-fill-available; /* Fixes mobile height issues */
     width: 100%;
     margin: 0;
     padding: 0;
@@ -25,15 +24,15 @@ body {
 
 /* Content box scaling fix */
 #content {
-    width: 60%;
-    max-width: 600px;
-    min-width: 320px;
+    width: 75%;
     background: rgb(184, 53, 235);
-    padding: 20px;
+    padding: 5%;
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     min-height: 60vh; /* Prevents shrinking */
+    max-height: 90%;
+    height: auto;
 }
 
 p {
@@ -45,7 +44,6 @@ p {
 .center {
     display: block;
     margin: auto;
-    width: 50%;
 }
 
 /* Make images responsive */
