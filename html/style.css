@@ -1,17 +1,17 @@
-/* Apply the background image to the whole page */
 body {
     background-image: url('images/background-img.svg'); 
-    
-    background-position: center;
+    background-attachment: scroll;
     background-repeat: no-repeat;
-    min-height: 100vh; /* Prevents content from being cut off */
-    min-width: 100vh;
-    background-size: cover;
-    display: fixed;
+    background-size: cover; /* Ensures full background coverage */
+    background-position: center;
+    min-height: 100vh; /* Covers entire screen */
+    height: 100vh;
+    width: 100%; /* Prevents cropping */
+    display: flex; /* Enables centering */
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 5%
+    padding: 5%;
 }
 
 /* Text Styling */
@@ -27,16 +27,15 @@ p {
 
 /* Style the content box */
 #content {
-    display: fixed;
     background: rgb(235, 177, 53);
     background-position: center;
     padding: 4%;
-    border-radius: 10px;
+    border-radius: 7%;
     text-align: center;
     width: 60%;
-    max-width: 75%; /* Ensures it doesn’t stretch too wide */
+    max-width: 600px; /* Prevents it from being too wide */
+    min-width: 320px; /* Prevents it from getting too small */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    min-height: 60%;
     height: auto;
     margin: auto;
 }
@@ -56,30 +55,48 @@ img {
     margin: auto;
 }
 
-/* Image Wrapper for Vertical Stacking */
-.image-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* 📱 Mobile Fixes */
+@media (max-width: 720px) {
+
+    /* Ensure body covers full screen */
+html, body {
+    height: 100%;
 }
 
-/* 📱 Mobile Responsive Fixes */
-@media (max-width: 768px) {
-    #content {
-        width: 90%; /* Expands content for better scaling */
-        padding: 5%;
-    }
+h1 {
+    color:rgb(255, 236, 64)
+}
 
-    .center {
-        width: 80%; /* Prevents it from being too small */
-    }
+body {
+    background-image: url('images/background-img.svg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    min-height: -webkit-fill-available; /* Fixes mobile height issues */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    h1 {
-        font-size: 36px; /* Reduces text size on smaller screens */
-    }
+/* Content box scaling fix */
+#content {
+    width: 60%;
+    max-width: 600px;
+    min-width: 320px;
+    background: rgb(184, 53, 235);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    min-height: 60vh; /* Prevents shrinking */
+}
 
-    p {
-        font-size: 18px;
-    }
+p {
+    color:rgb(255, 236, 64);
+}
+
 }
