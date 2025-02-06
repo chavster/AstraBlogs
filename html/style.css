@@ -1,51 +1,84 @@
 /* Apply the background image to the whole page */
 body {
-    background-image: url('images/background-img.svg'); /* Ensure correct path */
-    background-size: cover; /* Stretches to fit the screen */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
-    height: 100vh; /* Makes the body take up the full viewport height */
-    display: flex; /* Enables flexbox */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    margin: 0; /* Removes default margin */
+    background-image: url('images/background-img.svg'); 
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Prevents content from being cut off */
+    max-width: 100%;
+    background-size: cover;
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
-h1{
+/* Text Styling */
+h1 {
     font-size: 60px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-p{
+p {
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* Style the content box */
 #content {
-    background: rgb(235, 177, 53); /* White box with transparency */
-    padding: 10px;
-    border-radius: 10px; /* Rounded corners */
-    text-align: center; /* Centers text inside */
-    width: 50%; /* Adjust the width as needed */
-    max-width: 600px; /* Prevents it from being too wide */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+    background: rgb(235, 177, 53);
+    background-position: center;
+    padding: 4%;
+    border-radius: 10px;
+    text-align: center;
+    width: 60%;
+    max-width: 75%; /* Ensures it doesn’t stretch too wide */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    min-height: 60%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
 
+/* Centering Helper */
 .center {
     display: block;
     margin: auto;
     width: 50%;
-  }
-
-img {
-    width: 300; /* Adjust size */
-    height: auto;
 }
 
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+/* Image Wrapper for Vertical Stacking */
 .image-wrapper {
     display: flex;
-    flex-direction: column; /* Stacks images vertically */
-    align-items: center; /* Centers them horizontally */
-    gap: 20px; /* Adds spacing between images */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 📱 Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    #content {
+        width: 90%; /* Expands content for better scaling */
+        padding: 5%;
+    }
+
+    .center {
+        width: 80%; /* Prevents it from being too small */
+    }
+
+    h1 {
+        font-size: 36px; /* Reduces text size on smaller screens */
+    }
+
+    p {
+        font-size: 18px;
+    }
 }
