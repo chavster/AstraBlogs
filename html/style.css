@@ -5,12 +5,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh; /* Prevents content from being cut off */
-    max-width: 100%;
+    min-width: 100vh;
     background-size: cover;
     display: fixed;
     justify-content: center;
     align-items: center;
     margin: 0;
+    padding: 5%
 }
 
 /* Text Styling */
@@ -26,6 +27,7 @@ p {
 
 /* Style the content box */
 #content {
+    display: fixed;
     background: rgb(235, 177, 53);
     background-position: center;
     padding: 4%;
@@ -36,7 +38,6 @@ p {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     min-height: 60%;
     height: auto;
-    display: block;
     margin: auto;
 }
 
