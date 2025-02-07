@@ -1,49 +1,52 @@
+/* Ensures full height scaling */
 html, body {
     height: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 0;
 }
 
-h1 {
-    color:rgb(255, 236, 64);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
-}
-
+/* Background setup */
 body {
     background-image: url('images/background-img.svg'); 
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; /* Ensures the background fills the screen */
     background-position: center;
     min-height: 100vh;
-    width: 100%;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5vw; /* Adds some space on the sides */
+    margin-left: 0;
+    margin-right: 0;
 }
 
-/* Content box scaling fix */
+/* Content box */
 #content {
     width: 75%;
+    max-width: 800px; /* Prevents content from becoming too wide */
+    min-width: 320px; /* Ensures content never gets too small */
     background: rgb(184, 53, 235);
-    padding: 5%;
-    border-radius: 5px;
+    padding: 4%;
+    border-radius: 10px;
     text-align: center;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    min-height: 60vh; /* Prevents shrinking */
-    max-height: 90%;
-    height: auto;
+    min-height: 50vh; /* Prevents content from getting too small */
 }
 
+/* Headings */
+h1 {
+    color: rgb(255, 236, 64);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
 p {
-    color:rgb(255, 236, 64);
+    color: rgb(255, 236, 64);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-/* Centering Helper */
-.center {
-    display: block;
-    margin: auto;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 /* Make images responsive */
@@ -51,9 +54,60 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: auto;
+    margin: 0 auto 20px auto;
 }
 
+/* Audio player */
+audio {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 300px;
+}
+
+/* Links */
 a {
-    color:rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 📱 Responsive Design Fixes */
+@media (max-width: 1024px) { /* Tablets */
+    #content {
+        width: 85%;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    body {
+        background-size: cover;
+        padding: 5%;
+    }
+
+    #content {
+        width: 90%;
+        padding: 5%;
+        min-height: auto;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 16px;
+    }
 }
